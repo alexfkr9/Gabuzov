@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Background manual</title>
+</head>
+<body>
+<style type="text/css">
+	#buttonback, #mybutton {
+		margin: 0px 60px;
+		width: 200px;
+		float: left;
+		border: solid 3px orange;
+		border-radius: 25px 5px 25px 5px;
+		background-color: yellow;	
+	}
+</style>
+
+<div ALIGN=CENTER>
+	<form action="index.html">
+		<button id="buttonback">Назад</button>	
+	</form>
+	<button id="mybutton">Переключить цвет</button>
+	<form id="color">
+	<label>Выбрать цвет <input type="color" value="#15E151" onchange="bg()"></label>
+	</form>
+</div>
+
+<script>
+		var b=document.getElementById('mybutton');
+		b.onclick = function () {b.addEventListener("click",mcolor() )
+					};
+		var i = 0;                                                          
+function mcolor() {
+		var x=['#2F35A5', '#5FE5D5', '#AFE535', '#5689D5', '#19E5D1', '#1E90FF', '#4B0082', '#B222A2', '#DC143C', '#FFFF00'];
+			if ( i < 10 ) {document.body.style.background = x[i]; i++;
+							}
+			else i = 0;
+};
+
+function bg() { 
+    var form = document.forms.color;
+    var elem = form.elements[0];
+    window.document.body.style.background = elem.value; //document.write(elem.value);
+};
+
+</script>
+
+</body>
+</html>

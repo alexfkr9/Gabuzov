@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Background</title>
+</head>
+<body>	
+<canvas id='mycanvas' width='4000' height='2000'>
+</canvas>	
+<script>
+		canvas = document.getElementById('mycanvas');
+		context = canvas.getContext('2d');
+		canvas.style.background = '#15E151';
+		var i = 0; Time();                                                          
+function Time() {setTimeout(doy, 500)};
+	function doy() {
+		var x=['#2F35A5', '#5FE5D5', '#AFE535', '#5689D5', '#19E5D1', '#1E90FF', '#4B0082', '#B222A2', '#DC143C', '#FFFF00'];
+			if ( i < 10 ) {context.fillStyle=x[i]; i++;
+			context.fillRect(0, 0, 5000, 3000) 		
+			}
+			else i = 0;
+			Time();
+	} 		
+</script>
+</body>
+</html>

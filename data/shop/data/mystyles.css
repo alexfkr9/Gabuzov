@@ -1,0 +1,175 @@
+@media screen and (min-width: 600px) {
+	.hidden 	{display: block;}
+	.active {display: none;}
+}
+
+@media screen and (max-width: 599px) {
+	.hidden 	{display: none;}
+	.active {display: block;}
+}
+
+* {	
+	text-decoration: none;	
+}
+
+body {
+	display: block;
+	margin: auto;
+	padding: 10px;
+	max-width: 1200px;
+	
+
+}
+
+/**/
+.logo {width: auto;
+		max-width: 1200px;
+
+}
+
+
+
+header {
+	overflow: hidden;
+	background: #FFFFF9;
+}
+
+.left  {
+	display: block;
+	float: left;
+	width: 33%;
+}
+
+.center {
+	display: block;
+	float: left;
+	width: 33%;
+	text-align: center;
+	
+}
+
+.right {
+	display: block;
+	float: left;
+	width: 33%;
+	text-align: right;
+}
+
+.email {
+	font: bold 10px verdana, sans-serif;
+	
+
+}
+
+.phone {
+	font-size: 18px;
+    font: verdana;
+    color: #000;
+}
+
+.phone a {
+	position: relative;
+	top: 10px;	
+}
+
+.navbar {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+}
+
+.nav {
+	width: 100%;
+}	
+
+.nav li {
+	padding: 10px;	
+	float: left;
+	list-style-type: none;
+	color: #111;
+}
+
+.nav a:hover {
+	background: #6495ED;
+}
+
+.section {
+	overflow: hidden;
+}
+
+.container {
+	display: block;
+	overflow: hidden;
+	background: #FFF9F9;
+}
+
+.meta {
+	background: lightgray;
+}
+
+.asideleft  {
+	display: block;
+	float: left;
+	width: 30%;
+	text-align: left;
+	background: #F0F8FF;
+	
+}
+
+.asideright  {
+	display: block;
+	float: left;
+	width: 70%;
+	text-align: left;
+	background: #FFFBFB;
+}
+
+.sideright_nav li  {
+	display: block;
+	float: left;
+}  
+
+.price {
+	font-size: 22px;
+	font-weight: 700;
+	color: #FF6D00;
+}
+
+.block {
+	width: 100%;
+	
+	overflow: hidden;
+}
+
+.pagination {	
+	position: relative;
+	left: 35%;
+}
+
+.pagination li {
+	display: block;
+	float: left;
+	font-size: 25px;
+
+}
+
+footer {
+	display: block;
+	overflow: hidden;
+	padding-left: 70px;
+	
+}
+	footer .left {		
+		display: block;
+		float: left;
+		width: 50%;
+	}
+
+		footer .left ul {
+			list-style-type: none;
+		}
+
+
+
+
+	

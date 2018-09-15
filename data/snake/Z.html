@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Невстроенный JavaScript</title>
+<!--link rel="stylesheet" href="mystyles.css"-->
+</head>
+<style type="text/css">
+	body {
+		background-image: url(Fon.jpg);
+		background-size: cover;
+	};
+	#convas2, #mycanvas {
+				position :center;
+				top :50px;
+	}
+
+	
+	
+</style>
+<body>
+<audio id='myaudio'>
+	<source src='s8.wav' type='audio/wav'>
+</audio>
+<div id='convas2'>
+<canvas id='mycanvas' width='700' height='500'>
+</canvas>
+</div>
+
+<script>
+		canvas = document.getElementById('mycanvas');
+		context = canvas.getContext('2d');
+		canvas.style.border = '1px solid black';
+		canvas.style.background = 'rgb(235,255,255)';
+		//canvas.style.aline = 'button';
+
+//var lev=50+300*1/prompt('Выбери уровень 1-10', '1');
+document.onkeydown=key;
+function key() {
+		if(event.keyCode==38) {up()};
+		if(event.keyCode==37) {left()};
+		if(event.keyCode==39) {right()};
+		if(event.keyCode==40) {down()};
+		if(event.keyCode==19) {alert('Пауза')}
+};
+	
+var Lx=[], Ly=[], m=[], x=[], y=[], z=[];
+var pr =[40, 300]; del=[20, 300]; r=[500, 300];
+var i=0, j=0, n=0, m=0, rx, ry, dir=2, dirdel=2, napr=2;
+
+function left()  { dir = 1 ; napr = 1;  cord(); };
+function right() { dir = 2 ; napr = 2;  cord(); };
+function up()    { dir = 3 ; napr = 3;  cord(); };
+function down()  { dir = 4 ; napr = 4;  cord(); };
+rnd();
+function rnd() {
+		rnx =10*Math.random(); rx=20+60*Math.round(rnx); //появление квадрата
+		rny =5*Math.random(); ry=40+60*Math.round(rny);
+		var info=context.getImageData(0, 0, 700, 500);
+		var pos=(info.width*4*ry)+(rx*4);
+		if (info.data[pos] == 250) {rnd()};
+		context.fillStyle = 'rgb(250,100,210)';
+		context.fillRect(rx, ry, 20, 20);
+		m++; //счет
+		context.fillStyle = 'rgb(235,255,255)';
+		context.fillRect(630, 0, 70, 50);		
+		context.font = 'bold 50px verdana, sans-serif';
+		context.fillStyle = '#00CCCC';
+		context.fillText(m, 630, 40);
+		new Audio("s8.wav").play();
+		
+};
+
+function cord() { x[i] = pr[0]; y[i] = pr[1]; z[i] = napr; i++;		
+}; 
+			
+time();                                                          
+	function time() {setTimeout(doy, 180)};
+		
+		function doy() { print(); 
+				function print() {	
+				if      (dir == 1 && napr !== 2) { pr[0] = pr[0]-20; if (pr[0] == rx && pr[1] == ry) {pr[0] = pr[0]-20; rnd()} }
+				else if (dir == 2  &&  napr !== 1) { pr[0] = pr[0]+20; if (pr[0] == rx && pr[1] == ry) {pr[0] = pr[0]+20; rnd()} }
+				else if (dir == 3) { pr[1] = pr[1]-20; if (pr[0] == rx && pr[1] == ry) {pr[1] = pr[1]-20; rnd()} }
+				else if (dir == 4) { pr[1] = pr[1]+20; if (pr[0] == rx && pr[1] == ry) {pr[1] = pr[1]+20; rnd()} };
+
+				if  (pr[0]<0 || pr[0]>699 || pr[1]<0 || pr[1]>500) { GAMEOVER()};
+				var infoz=context.getImageData(0, 0, 700, 500);
+				var posz=(infoz.width*4*pr[1])+(pr[0]*4);
+				if (infoz.data[posz] == 250) { GAMEOVER() }; //натыкается сама на себя
+
+				context.fillStyle = 'rgb(250,100,210)';
+				context.fillRect(pr[0], pr[1], 20, 20);
+						
+						dell() ;
+						function dell() { if (del[0] == x[j] && del[1] == y[j]) {dirdel=z[j]; j++ };	
+						if      (dirdel == 1) { del[0] = del[0]-20 } 
+						else if (dirdel == 2) { del[0] = del[0]+20 } 
+						else if (dirdel == 3) { del[1] = del[1]-20 } 
+						else if (dirdel == 4) { del[1] = del[1]+20 };					
+						context.fillStyle = 'rgb(235,255,255)';
+						context.fillRect(del[0], del[1], 20, 20)
+						};	
+				}; 					
+			time();
+		};
+
+function GAMEOVER() {
+					canvas.style.background = 'orange';
+					context.font = 'bold 50px verdana, sans-serif';
+					context.fillText("GAME OVER", 170, 280);
+					m=0; 	context.fillRect(630, 0, 70, 50);
+							context.fillStyle = 'magenta';
+							context.fillText(m, 630, 40);						
+};	
+	
+/*
+<style type="text/css">
+	#mybutton {
+		margin: 50px 60px;
+		padding: 5px 0px 5px 0px;
+		width: 100px;
+		float: right;
+		border: solid 3px orange;
+		border-radius: 25px;
+		background-color: yellow;
+		transform: scale(2);
+	};
+</style>
+
+<div id="mybutton"-->
+	<input type="button" value=" U P " onmousedown="up()">
+	<P>
+	<input type="button" value=" L E " onmousedown="left()">
+	.
+	<input type="button" value=" R I " onmousedown="right()">
+	<P>
+	<input type="button" value=" D N " onmousedown="down()">
+</div>
+*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
