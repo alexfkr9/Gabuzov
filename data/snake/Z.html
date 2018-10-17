@@ -1,35 +1,96 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Невстроенный JavaScript</title>
-<!--link rel="stylesheet" href="mystyles.css"-->
 </head>
 <style type="text/css">
 	body {
 		background-image: url(Fon.jpg);
 		background-size: cover;
 	};
-	#convas2, #mycanvas {
-				position :center;
-				top :50px;
+
+.cont {
+	position: relative;
+}	
+canvas {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+    -ms-transform: translate(-50%, 1%);
+    transform: translate(-50%, 1%);
+	margin: 0;			
+}
+
+.mybutton {		
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+    -ms-transform: translate(-50%, -20%);
+    transform: translate(-50%, -20%);
+	margin: 0;	
+	width: auto;
+	height: auto;		
+}
+
+.mybutton table {
+	max-width: 100%;
+}
+
+td {
+	width: 75px;
+}
+
+.mybutton button {
+		position: relative;
+		opacity: 0.8;
+		padding: 10px;
+		width: 100%;		
+		border: solid 3px orange;
+		border-radius: 25px;
+		background-color: #caf;
+		font-size: 18px;		
 	}
 
-	
-	
+
+
 </style>
 <body>
 <audio id='myaudio'>
 	<source src='s8.wav' type='audio/wav'>
 </audio>
-<div id='convas2'>
-<canvas id='mycanvas' width='700' height='500'>
-</canvas>
+
+<div class="cont">
+	
+	<canvas id='mycanvas' width='700' height='500'>
+	</canvas>		
+	<div class="mybutton">
+		<table>
+			<tr>			
+				<td></td>	
+				<td><button onmousedown="up()">up</button></td>
+				<td></td>
+			</tr>
+			<tr>			
+				<td><button onmousedown="left()">left</button></td>
+				<td></td>		
+				<td><button onmousedown="right()">right</button></td>
+			</tr>	
+			<tr>				
+				<td></td>
+				<td><button onmousedown="down()">down</button></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>	
+			
 </div>
+
+
 
 <script>
 		canvas = document.getElementById('mycanvas');
 		context = canvas.getContext('2d');
-		canvas.style.border = '1px solid black';
+		//canvas.style.border = '1px solid black';
 		canvas.style.background = 'rgb(235,255,255)';
 		//canvas.style.aline = 'button';
 
@@ -113,31 +174,7 @@ function GAMEOVER() {
 							context.fillText(m, 630, 40);						
 };	
 	
-/*
-<style type="text/css">
-	#mybutton {
-		margin: 50px 60px;
-		padding: 5px 0px 5px 0px;
-		width: 100px;
-		float: right;
-		border: solid 3px orange;
-		border-radius: 25px;
-		background-color: yellow;
-		transform: scale(2);
-	};
-</style>
-
-<div id="mybutton"-->
-	<input type="button" value=" U P " onmousedown="up()">
-	<P>
-	<input type="button" value=" L E " onmousedown="left()">
-	.
-	<input type="button" value=" R I " onmousedown="right()">
-	<P>
-	<input type="button" value=" D N " onmousedown="down()">
-</div>
-*/
-</script>
+</script>	
 </body>
 </html>
 

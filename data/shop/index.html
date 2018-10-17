@@ -1,10 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>Shop</title>
 	<link rel="stylesheet" href="mystyles.css">		
 </head>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 <body>
 
 <header>
@@ -42,21 +54,20 @@
 		</div>		
 	</div>	
 
-	<div class="navbar">                    
-				<ul class="nav">
-					<li><button onclick=location.href="http://" class="active">Меню</button></li>
-					<li><button onclick=location.href="http://" class="hidden">Весь ассортимент</button></li>
-					<li><button onclick=location.href="http://" class="hidden" rel="nofollow">Доставка</button></li>
-					<li><button onclick=location.href="http://" class="hidden" rel="nofollow">Оплата</button></li>
-					<li><button onclick=location.href="http://" class="hidden" rel="nofollow">О магазине</button></li>    
-					<li><button onclick=location.href="http://" class="hidden" rel="nofollow">Контакты</button></li>
-					<li><button onclick=location.href="http://" class="hidden" rel="nofollow">Режим работы</button></li>     
-				</ul>     		
-	</div>		
-
+	<div class="topnav" id="myTopnav">		  
+		  <a href="http://">Весь ассортимент</a>
+		  <a href="http://">Доставка</a>
+		  <a href="http://">Оплата</a>
+		  <a href="http://">О магазине</a>
+		  <a href="http://">Контакты</a>
+		  <a href="http://">Режим работы</a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">Меню</a>
+	</div>
+							 									    		
 </header>	
 
-<section>
+<!section>
+	<div class="sd">
 	<div class="asideleft">
 		<h3>Категории
 		<p>Фильтр</h3>
@@ -115,7 +126,8 @@
 			<li><a href="http://" class="">На 3 отверстие (1)</a></li>
 		</ul>
 	</div>
-
+	</div>
+	<div class="sd">
 	<div class="asideright">
 		<ul class="sideright_nav">
 			<h4>
@@ -176,7 +188,7 @@
 		</div>
 
 		<div class="container">
-			<div class="meta">
+			<div class="sd meta">
 				<hr><a href="http://" title="Cмеситель кухонный FERRO Vasto BVA7">Cмеситель кухонный FERRO Vasto BVA7</a><hr>
 			</div>
 			<div class="left">
@@ -292,14 +304,11 @@
 			<p>Подкладочные материалы, используемые в смесители, оказывают прямое влияние на долговечность механизма. Некачественные механизмы приведут к дальнейшим поломкам, а учитывая, что замену частей смесителя не всегда можно провести ввиду отсутствия аналогов в продаже, лучше сразу покупать высококачественный смеситель от проверенных производителей.</p>
 			<p>В ассортименте есть <strong>смесители для кухни Киев</strong>, Днепропетровск и в других городах страны от ведущих производителей с отменным качеством и отличным дизайном.</p>
 		</div>
-
-		
-
 	</div>
-
-
+	</div>
 </section>
 
+<div class="sd">
 <footer>
 		<div class="left">
 				<ul>	
@@ -337,9 +346,8 @@
 		<div class="span4">
 					<a href="http://" target="_blank"><img src="//" alt="" title="LiveInternet" border="0" width="88" height="31"></a><a href="http://" target="_blank"><img src="./Смесители для кухни - купить смеситель для кухни Киев_files/hit" alt="" title="LiveInternet" border="0" width="88" height="31"></a>
 		</div>
-			
 </footer>
-
+</div>
 
 </body>
 </html>

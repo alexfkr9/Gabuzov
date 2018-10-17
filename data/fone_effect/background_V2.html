@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Background</title>
+</head>
+<style type="text/css">
+	#mycanvas {   
+		width: 100%;
+	}
+</style>
+<body>	
+<div>
+<canvas id='mycanvas' width='300' height='500'>
+</canvas>
+</div>	
+<script>
+		canvas = document.getElementById('mycanvas');
+		context = canvas.getContext('2d');
+		canvas.style.background = '15E151';
+		var i = 0;
+		Time();                                                          
+function Time() {setTimeout(doy, 100)};
+	function doy() {
+		var grd = context.createLinearGradient(0,0,200,0);
+		var x=['#2F35A5', '#5FE5D5', '#AFE535', '#5689D5', '#19E5D1', '#1E90FF', '#4B0082', '#B222A2', '#DC143C', '#FFFF00'];
+			if ( i < 9 ) {				
+				grd.addColorStop(0, x[i]);
+				grd.addColorStop(1, x[i+1]);
+				context.fillStyle= grd;
+				i++;
+				context.fillRect(0, 0, 300, 500);
+			}
+			else i = 0;
+			Time();
+	} 		
+</script>
+</body>
+</html>
